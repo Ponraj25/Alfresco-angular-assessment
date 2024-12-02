@@ -1,0 +1,28 @@
+<!-- <div class="wrapper"> -->
+  <!-- <app-sidebar></app-sidebar>
+  <section class="home-section">
+    <div class="text">Dashboard</div>
+  </section> -->
+  <!-- <div class="main-panel">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <div *ngIf="isMap('maps')">
+      <app-footer></app-footer>
+    </div>
+  </div> -->
+<!-- </div> -->
+<!-- app.component.html -->
+<!-- Sidebar Component -->
+<app-sidebar [isSidebarOpen]="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-sidebar>
+
+<!-- Header Section -->
+
+
+<!-- Main Content Section -->
+<section class="home-section" [class.sidebar-open]="isSidebarOpen">
+  <app-navbar [isSidebarOpen]="isSidebarOpen" [toggleSidebar]="toggleSidebar"></app-navbar>
+
+  <router-outlet></router-outlet>
+</section>
+
+

@@ -1,0 +1,35 @@
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div class="project-header">
+    <!-- Logo image displayed when sidebar is open or closed -->
+    <img
+      src="assets/img/logo.png"
+      alt="Logo"
+      class="logo-collapsed"
+      (click)="toggleSidebarAction()"
+    />
+  
+    <!-- Logo text when the sidebar is open -->
+    <span class="project-name"   (click)="toggleSidebarAction()" *ngIf="isSidebarOpen">Templates Hub</span>
+    
+    <!-- Toggle button to close the sidebar -->
+    <button
+      *ngIf="isSidebarOpen"
+      class="toggle-btn"
+      style="cursor: pointer"
+      (click)="toggleSidebarAction()"
+    >
+      &#8592;
+    </button>
+  </div>
+  
+
+  <ul class="nav-list">
+    <li *ngFor="let item of menuItems">
+      <a [href]="item.route">
+        <i [class]="'bx bx-' + item.icon"></i>
+        <span class="link_name">{{ item.title }}</span>
+      </a>
+      <span class="tooltip">{{ item.title }}</span>
+    </li>
+  </ul>
+</div>

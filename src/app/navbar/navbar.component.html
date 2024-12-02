@@ -1,0 +1,73 @@
+
+
+<mat-toolbar color="primary" class="navbar">
+  <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="header-content">
+    <div class="header-left">
+      <h3 class="project-title">Templates Hub</h3>
+      <div class="user-info">
+        <div class="user-name">John Doe</div>
+        <div class="workspace-container">
+          <span class="workspace-text">Free Workspace</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <mat-icon>search</mat-icon>
+      <input matInput placeholder="Search" />
+    </div>
+
+    <div class="header-right">
+      <div class="share-container">
+        <mat-icon>share</mat-icon>
+        <span class="button-text">Share</span>
+      </div>
+      <button mat-icon-button class="bell-button">
+        <mat-icon>notifications</mat-icon>
+        <div class="notification-badge"></div>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="collapsible-menu" [class.open]="isMenuOpen">
+  <div class="search-bar">
+    <mat-icon>search</mat-icon>
+    <input matInput placeholder="Search" />
+  </div>
+  <div class="notification-icons">
+    <!-- Share Icon -->
+    <mat-icon>share</mat-icon>
+
+    <!-- Notifications Icon with a dropdown menu -->
+    <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+      <mat-icon>notifications</mat-icon>
+    </button>
+
+    <!-- Notification dropdown menu -->
+    <mat-menu #notificationMenu="matMenu">
+      <div class="notification-item">
+        <mat-icon>event</mat-icon>
+        <span>You have a new event scheduled.</span>
+      </div>
+      <div class="notification-item">
+        <mat-icon>mail</mat-icon>
+        <span>You have unread messages.</span>
+      </div>
+      <div class="notification-item">
+        <mat-icon>check_circle</mat-icon>
+        <span>Your task has been completed successfully.</span>
+      </div>
+      <div class="notification-item">
+        <mat-icon>warning</mat-icon>
+        <span>Your subscription is about to expire.</span>
+      </div>
+    </mat-menu>
+  </div>
+</div>
+
+
