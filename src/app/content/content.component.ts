@@ -2,109 +2,40 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+// import Image1 from '../../../assets/images/img-1.webp';
+
 @Component({
   selector: 'app-content',
-  imports: [CommonModule,MatCardModule, MatButtonModule, SlickCarouselModule],
+  imports: [CommonModule,MatCardModule, MatButtonModule, ],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
   cards = [
     {
-      title: '2024 Employee Onboarding Bundle',
       description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-onboarding-bundle.png'
+      image: '../../assets/img/img-1.webp'
     },
     {
-      title: 'New-Hire Checklist Template',
       description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/new-hire-checklist.png'
+      image: '../../assets/img/img-2.jpg'
     },
     {
-      title: '2024 Employee Performance Bundle',
       description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-performance-bundle.png'
+      image: '../../assets/img/img-3.jpg'
     },
-    {
-      title: '2024 Employee Onboarding Bundle',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-onboarding-bundle.png'
-    },
-    {
-      title: 'New-Hire Checklist Template',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/new-hire-checklist.png'
-    },
-    {
-      title: '2024 Employee Performance Bundle',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-performance-bundle.png'
-    },
-    {
-      title: '2024 Employee Onboarding Bundle',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-onboarding-bundle.png'
-    },
-    {
-      title: 'New-Hire Checklist Template',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/new-hire-checklist.png'
-    },
-    {
-      title: '2024 Employee Performance Bundle',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-performance-bundle.png'
-    },
-    {
-      title: '2024 Employee Onboarding Bundle',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-onboarding-bundle.png'
-    },
-    {
-      title: 'New-Hire Checklist Template',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/new-hire-checklist.png'
-    },
-    {
-      title: '2024 Employee Performance Bundle',
-      description: 'Lorem ipsum dolor sit amet, matis consectetur adipiscing elit.',
-      image: 'assets/images/employee-performance-bundle.png'
-    },
+    
   ];
 
-  slickConfig = {
-    dots: true,            // Show navigation dots
-    infinite: true,        // Infinite scroll
-    speed: 500,            // Transition speed
-    slidesToShow: 3,       // Show 3 slides at a time
-    slidesToScroll: 1,     // Scroll 1 slide at a time
-    centerMode: true,      // Center current slide
-    focusOnSelect: true    // Allow selection by clicking a slide
+  slideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000
   };
 
-  // cards = [
-  //   {
-  //     image: 'assets/img/sidebar-5.jpg',
-  //     description: 'This is card 1',
-  //   },
-  //   {
-  //     image: 'assets/img/sidebar-5.jpg',
-  //     description: 'This is card 2',
-  //   },
-  //   {
-  //     image: 'assets/img/sidebar-5.jpg',
-  //     description: 'This is card 3',
-  //   },
-  //   {
-  //     image: 'assets/img/sidebar-5.jpg',
-  //     description: 'This is card 4',
-  //   },
-  //   {
-  //     image: 'assets/img/sidebar-5.jpg',
-  //     description: 'This is card 5',
-  //   },
-  // ];
 
   currentIndex = 0;
 

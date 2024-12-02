@@ -7,18 +7,15 @@
   </div>
 </div>
 
-<div class="layout-container">
+<div class="layout-container"> 
 
   <div class="carousel-container">
     <div class="carousel" [style.transform]="getTransform()">
       <div class="card" *ngFor="let card of cards">
-        <img
-            src="assets/img/dummy.png"
-            alt="{{ card.title }}"
-            class="card-image"
-          />
-        <h3>{{card?.title}}</h3>
-        <p>{{ card.description }}</p>
+        <div class="card-image">
+          <img [src]="card.image" alt="" class="imgs">
+        </div>
+        <p class="description">{{ card.description }}</p>
         <button class="browse-btn">Browse</button>
       </div>  
     </div>

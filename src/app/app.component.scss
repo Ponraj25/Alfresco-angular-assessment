@@ -20,11 +20,11 @@ body {
 }
 
 .sidebar {
-  min-height: 100vh;
   width: 78px;
+  min-height: 100vh;
   padding: 6px 14px;
   z-index: 99;
-  background:linear-gradient(45deg,#E9A825, #f44336);
+  background: linear-gradient(45deg, #E9A825, #f44336);
   transition: all 0.5s ease;
   position: fixed;
   top: 0;
@@ -32,7 +32,7 @@ body {
 }
 
 .sidebar.open {
-  width: 250px;
+  width: 230px;
 }
 
 .sidebar .logo_details {
@@ -89,19 +89,21 @@ body {
   height: 100%;
   margin-right: 0;
   padding-left: 1px;
+  
 }
 
-.sidebar li {
+/* Ensure sidebar has a stacking context */
+.sidebar {
   position: relative;
-  margin: 8px 0;
-  list-style: none;
+  z-index: 1; /* Lower z-index for sidebar */
 }
 
+/* Tooltip styling */
 .sidebar li .tooltip {
   position: absolute;
   top: -20px;
   left: calc(100% + 15px);
-  z-index: 3;
+  z-index: 9999; /* High z-index to ensure it appears above other content */
   background-color: var(--color-white);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 14px;
@@ -111,19 +113,30 @@ body {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
+  transition: all 0.4s ease;
 }
 
+/* Show tooltip when hovering */
 .sidebar li:hover .tooltip {
   opacity: 1;
   pointer-events: auto;
-  transition: all 0.4s ease;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
 }
 
+/* Ensure tooltip is hidden when sidebar is open */
 .sidebar.open li .tooltip {
   display: none;
 }
+
+/* Fix possible overflow issues */
+.sidebar li {
+  position: relative; /* Make sure tooltip is relative to each list item */
+  margin: 8px 0;
+  list-style: none;
+  z-index: 2; /* Set a lower z-index for the list item */
+}
+
 
 .sidebar input {
   font-size: 15px;
@@ -189,7 +202,7 @@ body {
 
 .sidebar li a .link_name {
   color: var(--color-white);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   white-space: nowrap;
   pointer-events: auto;
@@ -303,7 +316,7 @@ body {
 }
 
 .home-section.sidebar-open {
-  width: calc(100% - 261px); /* Adjusted width when the sidebar is open */
+  width: calc(100% - 276px); /* Adjusted width when the sidebar is open */
 }
 
 .home-section .text {

@@ -1,6 +1,6 @@
 <div class="sidebar" [class.open]="isSidebarOpen">
   <div class="project-header">
-    <!-- Logo image displayed when sidebar is open or closed -->
+
     <img
       src="assets/img/logo.png"
       alt="Logo"
@@ -8,10 +8,10 @@
       (click)="toggleSidebarAction()"
     />
   
-    <!-- Logo text when the sidebar is open -->
+
     <span class="project-name"   (click)="toggleSidebarAction()" *ngIf="isSidebarOpen">Templates Hub</span>
     
-    <!-- Toggle button to close the sidebar -->
+
     <button
       *ngIf="isSidebarOpen"
       class="toggle-btn"

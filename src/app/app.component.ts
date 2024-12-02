@@ -17,7 +17,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -25,16 +26,18 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     CommonModule,
     NavbarComponent,
     MatChipsModule,
-    SlickCarouselModule,
     MatCardModule,
     SidebarComponent,
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
     MatIconModule,
+     
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  
 })
 export class AppComponent {
   title = 'alfresco-dahsboard';
